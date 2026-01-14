@@ -1,7 +1,7 @@
 import {Datas} from './js/Datas.js';
 import {Player} from './js/Player.js'
 
-const rexVirtualJoystick = window.rexVirtualJoystick;
+// const rexVirtualJoystick = window.rexVirtualJoystick;
 
 const gameContainer = document.querySelector("#game-container");
 
@@ -27,7 +27,13 @@ const config = {
         }
     },
     plugin: {
-        scene: []
+        scene: [
+            {
+                key: 'rexVirtualJoystick',
+                plugin: rexvirtualjoystickplugin,
+                mapping: 'rexVirtualJoystick'
+            }
+        ]
     }
 }
 
@@ -39,9 +45,9 @@ function preload () {
 }
 
 function create () {
-    const player = new Player(this, Datas.playerSpawn.x, Datas.playerSpawn.y);
+    this.player = new Player(this, Datas.playerSpawn.x, Datas.playerSpawn.y, Datas.isUserMobile);
 }
 
 function update () {
-
+    this.player.update();
 }
