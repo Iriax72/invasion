@@ -2,7 +2,7 @@
 class Control {
     constructor (scene) {
         this.scene = scene;
-        this.movement = new Phaser.Vector3(0, 0, 0);
+        this.movement = new Phaser.Math.Vector3(0, 0, 0);
     }
 
     update() {
