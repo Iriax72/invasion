@@ -15,6 +15,9 @@ class Control {
 export class MobileControl extends Control {
     constructor (scene) {
         super(scene);
+        alert(scene);
+        alert(scene.sys);
+        alert(scene.rexVirtualJoystick);
         this.joystick = scene.rexVirtualJoystick.add(scene, {
             x: 150,
             y: 450,
