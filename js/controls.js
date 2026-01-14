@@ -31,8 +31,7 @@ export class MobileControl extends Control {
         this.moveDir = this.joystick.angle;
         this.moveNorm = this.joystick.force;
 
-        this.movement = this.moveDir.scale(this.moveNorm);
-        this.xMovement = Math.cos(this.movement);
-        this.yMovement = Math.sin(this.movement);
+        this.xMovement = Math.cos(this.moveDir) * this.moveNorm;
+        this.yMovement = Math.sin(this.moveDir) * this.moveNorm;
     }
 }
