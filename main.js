@@ -28,7 +28,7 @@ const config = {
         scene: [
             {
                 key: 'rexVirtualJoystick',
-                plugin: window.rexVirtualJoystick,
+                plugin: window.rexVirtualJoystickPlugin,
                 mapping: 'rexVirtualJoystick'
             }
         ]
