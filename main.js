@@ -1,6 +1,7 @@
 import {Datas} from './js/Datas.js';
 import {Player} from './js/Player.js';
 
+alert(window.rexVirtualJoystick);
 const rexVirtualJoystick = window.rexVirtualJoystick;
 
 const gameContainer = document.querySelector("#game-container");
@@ -39,8 +40,6 @@ function preload () {
 }
 
 function create () {
-    alert('plugin: ', this.rexVirtualJoystickPlugin);
-    alert(this.rexVirtualJoystick);
     this.player = new Player(this, Datas.playerSpawn.x, Datas.playerSpawn.y, Datas.isUserMobile);
 }
 
