@@ -43,6 +43,8 @@ function preload () {
 }
 
 function create () {
+    alert('plugin: ', this.rexVirtualJoystickPlugin);
+    alert(this.rexVirtualJoystick);
     this.player = new Player(this, Datas.playerSpawn.x, Datas.playerSpawn.y, Datas.isUserMobile);
 }
 
