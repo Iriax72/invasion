@@ -27,7 +27,7 @@ const config = {
             debug: true
         }
     },
-    plugin: {
+    plugins: {
         scene: []
     }
 }
