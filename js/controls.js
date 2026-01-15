@@ -17,7 +17,7 @@ export class MobileControl extends Control {
         super(scene);
         try{
             // Check if rexVirtualJoystick is loaded
-            if (typeof rexVirtualJoystick === 'undefined') {
+            if (typeof scene.rexVirtualJoystick === 'undefined') {
                 alert("rexVirtualJoystick plugin not loaded. Check CDN script.");
                 return;
             }
