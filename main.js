@@ -1,6 +1,8 @@
 import {Datas} from './js/Datas.js';
 import {Player} from './js/Player.js';
 
+const rexVirtualJoystick = window.rexVirtualJoystick;
+
 const gameContainer = document.querySelector("#game-container");
 
 const config = {
@@ -25,13 +27,7 @@ const config = {
         }
     },
     plugin: {
-        scene: [
-            {
-                key: 'rexVirtualJoystick',
-                plugin: window.rexVirtualJoystickPlugin,
-                mapping: 'rexVirtualJoystick'
-            }
-        ]
+        scene: []
     }
 }
 

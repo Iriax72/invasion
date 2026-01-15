@@ -15,19 +15,30 @@ class Control {
 export class MobileControl extends Control {
     constructor (scene) {
         super(scene);
-        alert(scene);
-        alert(scene.sys);
-        alert(scene.rexVirtualJoystick);
-        this.joystick = scene.rexVirtualJoystick.add(scene, {
-            x: 150,
-            y: 450,
-            radius: 60,
-            base: scene.add.circle(0, 0, 60, 0x888888).setAlpha(0.5),
-            thumb: scene.add.circle(0, 0, 30, 0xcccccc).setAlpha(0.8),
-
-            dir: '8dir',
-            forceMin: 0
-        });
+        try{
+            // Check if rexVirtualJoystick is loaded
+            if (typeof rexVirtualJoystick === 'undefined') {
+                alert("rexVirtualJoystick plugin not loaded. Check CDN script.");
+                return;
+            }
+            // Install rexVirtualJoystick plugin if not already installed
+            if (!scene.rexVirtualJoystick) {
+                scene.plugins.install('rexVirtualJoystick', rexVirtualJoystick, true);
+            }
+            this.joystick = scene.rexVirtualJoystick.add({
+                x: 300,
+                y: window.innerHeight -300,
+                radius: 50,
+                base: scene.add.circle(0, 0, 60, 0x444444),
+                thumb: scene.add.circle(0, 0, 30, 0xaaaaaa),
+                //deadZone: 10,
+                //fixed: false,
+                //dir: '8dir',
+                //forceMin: 0
+            });
+        } catch (e) {
+            alert("Erreur joystick: " + e.message);
+        }
     }
 
     update() {
